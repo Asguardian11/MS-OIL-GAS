@@ -166,18 +166,38 @@ body::before {
   color: #fff;
 }
 
-/* Industrial oil & gas background */
+
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.4) 80%),
-    url('https://images.unsplash.com/photo-1581091870633-1e7a8e3a9b24?auto=format&fit=crop&w=1900&q=80')
+    linear-gradient(to right, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0.2) 80%),
+    url('https://images.unsplash.com/photo-1581091215367-59ab6b18dbaf?auto=format&fit=crop&w=1900&q=80')
+    center/cover no-repeat;
+  filter: brightness(0.8);
+  z-index: 0;
+  transition: background 0.5s ease, filter 0.5s ease;
+}
+
+/* 🌙 Dark Mode (Night Industrial Refinery) */
+[data-bs-theme="dark"] .hero::before {
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.75) 25%, rgba(0, 0, 0, 0.3) 80%),
+    url('hero-bg.jpg')
     center/cover no-repeat;
   filter: brightness(0.8) contrast(1.05);
-  z-index: 0;
 }
+
+/* ☀️ Light Mode (Daytime Industrial Plant) */
+[data-bs-theme="light"] .hero::before {
+  background:
+    linear-gradient(to right, rgba(255, 255, 255, 0.25) 10%, rgba(255, 255, 255, 0.1) 70%),
+    url('qqq.jpg')
+    center/cover no-repeat;
+  filter: brightness(0.95) contrast(1);
+}
+
 
 .hero > * {
   position: relative;
@@ -224,12 +244,7 @@ body::before {
     padding: 5rem 1.2rem 3rem;
   }
 
-  .hero::before {
-    background:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.5) 70%),
-      url('https://images.unsplash.com/photo-1581091870633-1e7a8e3a9b24?auto=format&fit=crop&w=1200&q=80')
-      center/cover no-repeat;
-  }
+  
 
   .hero h2 {
     font-size: 2.2rem;
@@ -348,21 +363,21 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:2re
 
   <main class="container-custom">
     <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="reveal px-3">
+    <section id="home" class="hero" >
+      <div class="reveal px-2 text-body">
         <p class="pill">Trusted • International • Compliant</p>
-        <h2>Powering Global Energy Solutions</h2>
-        <p class="muted">MS OIL & GAS LTD provides reliable oil trading and comprehensive energy services to corporate and international partners. We combine market expertise, strong logistics, and strategic partnerships to deliver value across the supply chain.</p>
+        <h2 class="text-gray">Powering Global Energy Solutions</h2>
+        <p class="muted text-white">MS OIL & GAS LTD provides reliable oil trading and comprehensive energy services to corporate and international partners. We combine market expertise, strong logistics, and strategic partnerships to deliver value across the supply chain.</p>
 
         <div class="d-flex gap-2 flex-wrap">
           <a href="#contact" class="btn-gold">Partner with Us</a>
-          <a href="#projects" class="btn-outline-gold">Our Projects</a>
+          <a href="#projects" class="btn-gold">Our Projects</a>
         </div>
 
         <div class="kpis mt-3">
-          <div class="kpi"><strong>20+</strong><span class="muted-sm">Years Experience</span></div>
-          <div class="kpi"><strong>50+</strong><span class="muted-sm">Corporate Partners</span></div>
-          <div class="kpi"><strong>100M+</strong><span class="muted-sm">Barrels Traded</span></div>
+          <div class="kpi"><strong>20+</strong><span class="muted-sm  text-white">Years Experience</span></div>
+          <div class="kpi"><strong>50+</strong><span class="muted-sm  text-white">Corporate Partners</span></div>
+          <div class="kpi"><strong>100M+</strong><span class="muted-sm  text-white">Barrels Traded</span></div>
         </div>
       </div>
 
@@ -454,7 +469,7 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:2re
     </section>
 
     <!-- OBJECTIVES -->
-<section id="objectives" class="reveal">
+   <section id="objectives" class="reveal">
   <div class="section-title"><h3>Our Objectives</h3></div>
   <p>
     At <strong>MS OIL & GAS LTD</strong>, our objectives reflect our focus on innovation, integrity, and operational excellence
@@ -658,7 +673,6 @@ nav.querySelectorAll('a').forEach(link => {
   </script>
 </body>
 </html>
-
 
 
 
